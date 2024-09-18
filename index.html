@@ -15,10 +15,10 @@
             </span>
             <span>
                 <div class="mood text-xs flex items-center md:hidden cursor-pointer">
-                    <button onclick="mood(this)" class=" px-3 py-2 bg-gray-800 rounded-l-xl text-white">Dark</button>
-                    <!-- <ion-icon onclick="mood(this)" name="moon" class="px-3 py-2 bg-gray-800 rounded-l-xl text-white"></ion-icon> -->
-                    <button onclick="mood(this)" class=" px-3 py-2 rounded-r-xl bg-gray-300">Light</button>
-                    <!-- <ion-icon class="px-3 py-2 rounded-r-xl bg-gray-300" name="sunny"></ion-icon> -->
+                    <!-- <button onclick="mood(this)" class=" px-3 py-2 bg-gray-800 rounded-l-xl text-white">Dark</button> -->
+                    <ion-icon onclick="mood(this)" name="moon" class="px-3 py-2 bg-gray-800 rounded-l-xl text-white"></ion-icon>
+                    <!-- <button onclick="mood(this)" class=" px-3 py-2 rounded-r-xl bg-gray-300 text-black">Light</button> -->
+                    <ion-icon onclick="mood(this)" id="surjo"  class="px-3 py-2 rounded-r-xl bg-gray-300" name="sunny"></ion-icon>
                     <ion-icon onclick="menu(this)" name="menu" class="text-2xl md:hidden px-3"></ion-icon>
                 </div>
             </span>
@@ -40,8 +40,11 @@
                 <a href="#">Contract</a>
             </li>
             <div class="mood text-xs flex items-center cursor-pointer hidden md:block">
-                <button onclick="mood(this)" class=" px-3 py-2 bg-gray-800 rounded-l-xl text-white">Dark</button>
-                <button onclick="mood(this)" class=" px-3 py-2 rounded-r-xl bg-gray-300 ">Light</button>
+                <!-- <button onclick="mood(this)" class=" px-3 py-2 bg-gray-800 rounded-l-xl text-white">Dark</button>
+                <button onclick="mood(this)" class=" px-3 py-2 rounded-r-xl bg-gray-300 ">Light</button> -->
+                <ion-icon onclick="mood(this)" name="moon" class="px-3 py-2 bg-gray-800 rounded-l-xl text-white"></ion-icon>
+                    <!-- <button onclick="mood(this)" class=" px-3 py-2 rounded-r-xl bg-gray-300 text-black">Light</button> -->
+                <ion-icon onclick="mood(this)" id="surjo"  class="px-3 py-2 rounded-r-xl bg-gray-300" name="sunny"></ion-icon>
             </div>
         </ul>
     </nav>
@@ -66,10 +69,11 @@
                     DOME.classList.remove("dark")
                     // heading.innerHTML = "Light mood Enabled";
                 }
-                if(e.innerHTML === "Dark"){
+                if(e.innerHTML === "Dark" || e.name === "moon"){
                     DOME.classList.add("dark")
-                    heading.innerHTML = "Dark Mood Enabled";
-                }else if (e.innerHTML === "Light"){
+                    document.getElementById("surjo").style.color = "black";
+
+                }else if (e.innerHTML === "Light" || e.name === "sunny"){
                     DOME.classList.remove("dark")
                     heading.innerHTML = "Light mood Enabled";
                 }
